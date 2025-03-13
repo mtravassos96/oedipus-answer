@@ -3,14 +3,14 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 func main() {
 	fmt.Println("First tests")
 
-	randomInt := rand.Intn(5) 
-	
-	fmt.Println(randomInt)
-
-	// resource https://www.youtube.com/watch?v=yPeYZ0QuspU
+	// Random time method
+	randomTime := rand.New(rand.NewSource(time.Now().UnixNano())) 
+	randomInt := randomTime.Intn(100)
+	fmt.Print(randomInt)
 }
